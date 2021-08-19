@@ -1,32 +1,12 @@
-import { useState } from 'react'
+import Entry from './Entry'
 
-
-const Journal = () => {
-
-    const [journals] = useState( [{
-        id: 1,
-        title: 'Entry 1',
-        body: 'Dear Diary',
-        emotion: 7,
-    },
-    {
-        id: 2,
-        title: 'Entry 2',
-        body: 'Dear Diary',
-        emotion: 7,
-    },
-    {
-        id: 3,
-        title: 'Entry 3',
-        body: 'Dear Diary',
-        emotion: 7,
-    },
-    
-    ])
-
+const Journals = ({ journals }) => {
+    console.log({journals})
     return (
-        'Hello World'
+        <>
+            Hello
+        </>
     )
 }
 
-export default Journal
+export default Journals

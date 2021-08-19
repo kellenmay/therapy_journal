@@ -1,8 +1,12 @@
 import './App.css'
-import NavBar from './components/NavBar'
-import Journal from './components/Journal'
+import NavBar from './NavBar'
+import Journal from './Journal'
+import { useState } from 'react'
 
-function App() {
+
+const App = () => {
+
+
   return (
     <div className="App">
       <NavBar />
