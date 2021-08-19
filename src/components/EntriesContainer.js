@@ -1,5 +1,5 @@
-import { connect, useDispatch } from 'react-redux'
-import React, { Component, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import React, { useEffect } from 'react'
 import { fetchEntries } from '../actions/entriesActions'
 import EntriesForm from './entriesForm'
 
@@ -14,7 +14,6 @@ const EntriesContainer  = () => {
         dispatch(fetchEntries())
     })
     
-
 
     return (
         <div className='entry'>
