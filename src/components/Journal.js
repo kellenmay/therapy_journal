@@ -1,7 +1,6 @@
-import Entry from './Entry'
+// import Entry from './EntriesContainer'
 
 const Journals = ({ journals }) => {
-    console.log({journals})
     return (
         <>
             Hello

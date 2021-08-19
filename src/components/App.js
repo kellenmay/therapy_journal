@@ -1,7 +1,7 @@
 import './App.css'
 import NavBar from './NavBar'
 import Journal from './Journal'
-import { useState } from 'react'
+import EntriesContainer from './EntriesContainer'
 
 
 const App = () => {
@@ -11,6 +11,7 @@ const App = () => {
     <div className="App">
       <NavBar />
       <Journal />
+      <EntriesContainer />
     </div>
   );
 }
