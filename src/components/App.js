@@ -1,8 +1,7 @@
 import './App.css'
-import NavBar from './NavBar'
-import Journal from './Journal'
-import EntriesContainer from './EntriesContainer'
 
+import NavBar from './NavBar'
+import Router from './Router'
 
 const App = () => {
 
@@ -10,8 +9,7 @@ const App = () => {
   return (
     <div className="App">
       <NavBar />
-      <Journal />
-      <EntriesContainer />
+      <Router />
     </div>
   );
 }
