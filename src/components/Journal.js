@@ -1,11 +1,19 @@
-// import Entry from './EntriesContainer'
+import React from 'react'
+import { connect } from 'react-redux'
 
-const Journals = ({ journals }) => {
+
+const Journal = ({ entries }) => {  
+    console.log(entries)
     return (
-        <>
-            Hello
-        </>
+        <div>
+            {entries.map(entry => <ul><li key={entry.id}> {entry.title} - {entry.body} </li></ul>)}
+        </div>
     )
 }
 
-export default Journals
+const mapStateToProps = state => {
+    return { entries: state.entries }
+}
+
+
+export default connect(mapStateToProps)(Journal);

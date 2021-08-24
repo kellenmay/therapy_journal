@@ -4,12 +4,13 @@ export const fetchEntries = () => {
         .then(resp => resp.json())
         .then(entries => dispatch({type: 'FETCH_ENTRIES', payload: entries})
         )
+        
     }
 
 }   
 
-export const addEntry = entry => {
-    return (dispatch) => {
+export const addEntry = (entry) => {
+    return dispatch => {
     fetch('http://127.0.0.1:3000/entries', {
         method: 'POST',
         body: JSON.stringify(entry),
