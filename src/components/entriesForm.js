@@ -24,7 +24,7 @@ class EntriesForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.addEntry()
+        this.props.addEntry(this.state)
     }
 
     render() {
@@ -40,10 +40,11 @@ class EntriesForm extends Component {
             <label>Emotion:</label>
                 <input type='interger' defaultValue={this.state.emotion} onChange={this.handleChange} name="emotion" />
                     <br />
-            <input type="hidden" defaultValue={this.state.user_id} onChange={this.handleChange}  user_id= {1} />
-            <input type="hidden" defaultValue={this.state.journal_id_id} onChange={this.handleChange}  journal_id= {1} />
+            <input type="hidden" defaultValue= {1} onChange={this.handleChange}  name="user_id" />
+            
+            <input type="hidden" defaultValue={1} onChange={this.handleChange}  name="journal_id" />
             <br/>
-            <input type='submit' value='Create Grad' />                     
+            <input type='submit' value='Create Entry' />                     
             </form>
         );
     }

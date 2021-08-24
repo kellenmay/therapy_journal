@@ -13,7 +13,7 @@ const EntriesContainer  = () => {
 
     return (
         <div className='entry'>
-            <h3> Hello Mounting </h3>
+            <h3> Journal Entry </h3>
             <EntriesForm />
         </div>
     )
