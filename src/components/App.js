@@ -1,15 +1,17 @@
 import './App.css'
 import NavBar from './NavBar'
 import Router from './Router'
-import EntriesContainer from './EntriesContainer'
+import { useAuth0 } from '@auth0/auth0-react';
 
-const App = () => {
+function App() {
+  const { isLoading } = useAuth0();
 
+  if (isLoading) return <div>Loading...</div>
 
   return (
     <div className="App">
+
       <NavBar />
-      <EntriesContainer />
       <Router />
     </div>
   );

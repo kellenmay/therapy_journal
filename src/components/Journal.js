@@ -18,3 +18,6 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps)(Journal);
+
+
+// add a delete entry button and fetch request

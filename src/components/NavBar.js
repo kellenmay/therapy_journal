@@ -1,19 +1,24 @@
-import Button from './Button'
+
+import {Link} from "react-router-dom";
+import LoginButton from './LoginButton'
+import LogoutButton from './LogoutButton'
 
 
-const NavBar = (props) => {
-
-const onClick = () => {
-    console.log('Click')
-}
-
+function NavBar() {
     return (
-        <header className='header'>
-            <h1 style={{color: 'black', backgroundColor: 'red'}}>{props.title}</h1>
-        <br></br>
-        <Button color='blue' text='New Entry' onClick={onClick} />
-        <Button color='blue' text='Your Journal' onClick={onClick}/>
-        </header>
+        <div id="nav-bar">
+            <LoginButton />
+            <LogoutButton />
+            <Link to="/entries">
+                <button> Your Journal</button>
+            </Link>
+            <Link to="/entries/new">
+                <button> New Entry</button>
+            </Link>
+            <Link to="/profile">
+                <button id="profile">Profile</button>
+            </Link>
+        </div>
     )
 }
 
