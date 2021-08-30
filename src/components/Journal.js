@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
+import { fetchEntries } from '../actions/entriesActions'
 
 const Journal = ({ entries }) => {  
 
+    console.log(entries)
     return (
         <div>
             <h3>Welcome</h3>
@@ -17,7 +18,10 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps)(Journal);
+
+
+
+export default connect(mapStateToProps, { fetchEntries})(Journal);
 
 
 // add a delete entry button and fetch request

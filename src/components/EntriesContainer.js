@@ -10,7 +10,6 @@ const EntriesContainer  = () => {
     const dispatch = useDispatch()
     useEffect(() => { dispatch(fetchEntries()) })
     
-
     return (
         <div className='entry'>
             <h3> Journal Entry </h3>

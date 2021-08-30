@@ -7,5 +7,5 @@ export const entriesReducer = (state = [], action) => {
         default:
             return state
     }
-    
 }
+    

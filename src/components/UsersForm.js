@@ -17,9 +17,8 @@ class UsersForm extends Component {
     }
 
     handleSubmit = e => {
-        debugger
         e.preventDefault()
-        this.props.addUser({user: this.state})
+        this.props.addUser({user: this.state})  
     }
 
     render(){
@@ -28,7 +27,7 @@ class UsersForm extends Component {
                 <label>Email: </label>
                 <input type="text" value={this.state.username} onChange={this.handleChange} name="email" />
                 <label>password: </label>
-                <input type="password" value={this.state.password} onChange={this.handleChange} name="password_digest" autoComplete="on" />
+                <input type="password" value={this.state.password} onChange={this.handleChange} name="password" autoComplete="on" />
                 <input type="submit" value="Add User"/>
             </form>
             
