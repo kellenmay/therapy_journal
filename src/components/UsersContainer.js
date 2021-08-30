@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
-import { fetchUsers } from '../actions/usersActions'
+
 import UsersForm from './UsersForm'
 
 
 class UsersContainer extends Component {
 
-    componentDidMount(){
-        this.props.fetchUsers()
-    }
+    // componentDidMount(){
+    //     this.props.addUser()
+    // }
 
     render(){
         return(
@@ -21,4 +20,4 @@ class UsersContainer extends Component {
     }
 }
 
-export default connect(null, { fetchUsers })(UsersContainer)
+export default UsersContainer

@@ -18,6 +18,9 @@ function NavBar() {
             <Link to="/profile">
                 <button id="profile">Profile</button>
             </Link>
+            <Link to="/users/new">
+                <button id="profile">Create Account</button>
+            </Link>
         </div>
     )
 }

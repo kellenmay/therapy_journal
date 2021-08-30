@@ -10,7 +10,7 @@ export const fetchEntries = () => {
 }   
 
 export const addEntry = (entry) => {
-    console.log(entry)
+
     return dispatch => {
     fetch('http://127.0.0.1:3000/entries', {
         method: 'POST',

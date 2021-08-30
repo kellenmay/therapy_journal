@@ -1,5 +1,6 @@
-export const addUser = user => {
+export const addUser = (user) => {
     return (dispatch) => {
+        console.log(dispatch)
         fetch('http://localhost:3000/users', {
             method: 'POST',
             body: JSON.stringify(user),

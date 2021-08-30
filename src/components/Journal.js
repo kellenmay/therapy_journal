@@ -7,7 +7,7 @@ const Journal = ({ entries }) => {
     return (
         <div>
             <h3>Welcome</h3>
-            {entries.map(entry => <ul><li key={entry.id}>  {entry.title} - {entry.body} </li></ul>)}
+            {entries.map(entry => <li key={entry.id}>  {entry.title} - {entry.body} </li>)}
         </div>
     )
 }
