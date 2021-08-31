@@ -1,8 +1,8 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import EntriesContainer from './EntriesContainer'
-import Home from './Home'
 import Journal from './Journal'
+import Home from './Home'
 import Profile from './Profile'
 import Users from './UsersContainer'
 

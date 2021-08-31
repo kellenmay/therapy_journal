@@ -22,3 +22,17 @@ export const addEntry = (entry) => {
     )
 }
 }
+
+export const editEntry = (entry) => {
+
+    return dispatch => {
+    fetch('http://127.0.0.1:3000/entries', {
+        method: 'PATCH',
+        body: JSON.stringify(entry),
+        headers: { 'Content-Type': 'application/json'}
+    })
+    .then(resp => resp.json())
+    .then(entry => dispatch({type: 'ADD_ENTRY', payload: entry})
+    )
+}
+}
