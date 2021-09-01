@@ -1,38 +1,72 @@
-import React, { Component } from 'react'
+import React, { useState,  useEffect } from 'react'
 import { addUser } from '../actions/usersActions'
 import { connect } from 'react-redux'
+import axios from "axios";
 
-class UsersForm extends Component {
+
+const UsersForm = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [user, setUser] = useState()
     
-    state = {
-        email: '',
-        password_digest: ''
+    useEffect(() => {
+        const loggedInUser = localStorage.getItem("user");
+        if (loggedInUser) {
+            const foundUser = JSON.parse(loggedInUser);
+            setUser(foundUser);
+        }
+    }, []);
+    
+    if (user) {
+        return <div>{user.name} is loggged in</div>;
     }
 
-    handleChange = e => {
-        const { name, value } = e.target
-        this.setState({
-            [name]: value
-        })
-    }
-
-    handleSubmit = e => {
-        e.preventDefault()
-        this.props.addUser({user: this.state})  
-    }
-
-    render(){
-        return(
-            <form onSubmit={this.handleSubmit}>
-                <label>Email: </label>
-                <input type="text" value={this.state.username} onChange={this.handleChange} name="email" />
-                <label>password: </label>
-                <input type="password" value={this.state.password} onChange={this.handleChange} name="password" autoComplete="on" />
-                <input type="submit" value="Add User"/>
-            </form>
+    const handleSubmit = async e => {
+        e.preventDefault();
+        const user = { email, password };
+        const response = await axios.post(
+            "http://localhost:3000/sessions",
+            user
+            );
             
-        )
-    }
-}
+            setUser(response.data)
+            localStorage.setItem('user', response.data)
+            console.log(response.data)
+        };
+        
+        const handleLogout = () => {
+            setUser({});
+            setEmail("");
+            setPassword("");
+            localStorage.clear();
+          };
+
+
+        return (
+            <form onSubmit={handleSubmit}>
+        <label htmlFor="email">email: </label>
+        <input
+          type="text"
+          value={email}
+          placeholder="enter a email"
+          onChange={({ target }) => setEmail(target.value)}
+        />
+        <div>
+          <label htmlFor="password">password: </label>
+          <input
+            type="password"
+            value={password}
+            placeholder="enter a password"
+            onChange={({ target }) => setPassword(target.value)}
+          />
+        </div>
+        <button type="submit">Login</button>
+        <button onClick={handleLogout}>logout</button>
+      </form>
+    );
+};
+
+
+
 
 export default connect(null, { addUser })(UsersForm)    

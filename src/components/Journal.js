@@ -1,22 +1,18 @@
 import React from 'react'
 import { connect, useSelector } from 'react-redux'
-import { fetchEntries, editEntry } from '../actions/entriesActions'
+import { fetchEntries   } from '../actions/entriesActions'
 
 
-const Journal = () => {  
+const Journal = (props) => {  
 
 const entries = useSelector(state => state.entries)
+console.log(props)
 
-const handleClick = (e, entry) => {
-    e.preventDefault() 
-    editEntry(e, entry)
-    // console.log(e.value)
-}
 
 return (
-        <div>
-            <h3>Welcome</h3>
-            {entries.map(entry => <li key={entry.id}>  {entry.title} - {entry.body} <button onClick={(e) => handleClick(console.log(entry))}>EDIT</button></li>)}
+    <div>
+            <h3>Welcome</h3>    
+            {entries.map(entry => <li key={entry.id}>  {entry.user_id} - {entry.title} - {entry.body} </li>)}
         </div>
     )
 }

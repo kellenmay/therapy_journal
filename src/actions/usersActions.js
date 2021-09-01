@@ -19,3 +19,6 @@ export const fetchUsers = () => {
         .then(users => dispatch({ type: 'FETCH_USERS', payload: users }))
     }
 }
+
+
+
