@@ -26,13 +26,24 @@ export const addEntry = (entry) => {
 export const editEntry = (entry) => {
 
     return dispatch => {
-    fetch('http://127.0.0.1:3000/entries', {
+    fetch(`http://127.0.0.1:3000/entries/${entry.id}`, {
         method: 'PATCH',
         body: JSON.stringify(entry),
         headers: { 'Content-Type': 'application/json'}
     })
     .then(resp => resp.json())
-    .then(entry => dispatch({type: 'ADD_ENTRY', payload: entry})
+    .then(entry => dispatch({type: 'EDIT_ENTRY', payload: entry})
+    )
+}
+}
+
+export const deleteEntry = (entry) => {
+    return (dispatch) => {
+    fetch(`http://127.0.0.1:3000/entries/${entry.id}`, {
+        method: 'DELETE'
+    })
+    .then(resp => resp.json())
+    .then(entry => dispatch({type: 'DELETE_ENTRY', payload: entry})
     )
 }
 }

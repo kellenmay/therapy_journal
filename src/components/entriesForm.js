@@ -25,10 +25,7 @@ class EntriesForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        console.log(this.state.title)
-        console.log(this.state.body)
-        console.log(this.state.uses)
-        console.log(this.state.emotion)
+
         this.props.addEntry(this.state)
     }
     render() {
