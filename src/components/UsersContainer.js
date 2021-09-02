@@ -1,15 +1,8 @@
 import React, { Component } from 'react'
-
-
 import UsersForm from './UsersForm'
 
 
 class UsersContainer extends Component {
-
-    // componentDidMount(){
-    //     this.props.addUser()
-    // }
-
 
 
     render(){

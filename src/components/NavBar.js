@@ -9,6 +9,9 @@ function NavBar() {
         <div id="nav-bar">
             <LoginButton />
             <LogoutButton />
+            <Link to="/">
+                <button> Home</button>
+            </Link>
             <Link to="/entries">
                 <button> Your Journal</button>
             </Link>

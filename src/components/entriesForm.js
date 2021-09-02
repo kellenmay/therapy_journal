@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { addEntry } from '../actions/entriesActions'
+import { addEntry, } from '../actions/entriesActions'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 
 // functional don't have access to lifecycles methods, like didMount, they can only use Hooks. Class components can't se hooks.
@@ -12,24 +13,31 @@ class EntriesForm extends Component {
         title:'',
         body: '',
         emotion: '',
-        user_id: '',
-        journal_id: 1
+        user_id: 1,
+        journal_id: 1,
+        added: false
     }
-    
+
     handleChange = e => {
         const { name, value } = e.target
-        this.setState({
-        [name]: value
+        this.setState({ 
+        [name]: value,
+       
         })
+        
     }
 
     handleSubmit = e => {
         e.preventDefault()
-
         this.props.addEntry(this.state)
+        // this.props.history.push('/entries');
+        this.setState({ added: true })
+
     }
+
     render() {
         return (
+            <>
             <form onSubmit={this.handleSubmit}>
 
             <label>Title:</label>
@@ -47,15 +55,15 @@ class EntriesForm extends Component {
             <br/>
             <input type='submit' value='Create Entry' />                     
             </form>
+            {this.state.added === true && <Redirect to={'/entries'}/>}
+            </>
         );
     }
 }
 
 
-
-
 const mapStateToProps = state => {
-    return { users: state.users }
+    return { users: state.users     }
 }
 
 

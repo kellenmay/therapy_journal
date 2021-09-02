@@ -11,6 +11,8 @@ import { Auth0Provider } from '@auth0/auth0-react'
 import App from './components/App'
 import { rootReducer } from './reducers/rootReducer'
 
+
+
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
@@ -26,7 +28,7 @@ ReactDOM.render(
     domain={domain}
     clientId={clientId}
     redirectUri={window.location.origin}>
-      <Router>
+      <Router >
           <App />
       </Router>
         </Auth0Provider>
