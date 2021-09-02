@@ -20,6 +20,7 @@ const Router = () => {
            <Route exact path='/Profile' component={Profile} />
            <Route exact path='/entries/new' component={EntriesContainer} />
            <Route exact path='/users/new' component={Users} />
+
     </Switch>
     )
 }
