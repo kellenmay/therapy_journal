@@ -12,11 +12,11 @@ export const addUser = (user) => {
 }
 
 
-export const fetchUsers = () => {
+export const fetchUsersEntries = () => {
     return (dispatch) => {
-        fetch('http://localhost:3000/users')
+        fetch('http://localhost:3000/users/1/entries')
         .then(resp => resp.json())
-        .then(users => dispatch({ type: 'FETCH_USERS', payload: users }))
+        .then(users => dispatch({ type: 'FETCH_USERS_ENTRIES', payload: users }))
     }
 }
 

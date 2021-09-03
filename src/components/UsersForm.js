@@ -39,7 +39,7 @@ const UsersForm = () => {
             setEmail("");
             setPassword("");
             localStorage.clear();
-          };
+          }; 
 
 
         return (

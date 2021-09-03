@@ -1,13 +1,10 @@
 import React from 'react'
 import { useAuth0 } from '@auth0/auth0-react'
-import { connect } from 'react-redux'
-import { fetchEntries } from '../actions/entriesActions'
-import UsersForm from './UsersForm'
 
 
 const Profile = ({ entries }) => {
   const { user, isAuthenticated } = useAuth0();
-  
+
 
     return (
       isAuthenticated && ( 
@@ -23,12 +20,4 @@ const Profile = ({ entries }) => {
   }
 
 
-const mapStateToProps = state => {
-return { entries: state.entries }
-}
-
-
-
-
-
-export default connect(mapStateToProps, ({ fetchEntries }, UsersForm))(Profile);
+export default Profile;

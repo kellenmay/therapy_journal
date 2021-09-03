@@ -8,16 +8,15 @@ const Journal = (props) => {
     const entries = useSelector(state => state.entries)
 
     const handleClick = (entry) => {
-        console.log("delete")
         // useDispatch
         props.deleteEntry(entry)
 
     }
 
     return (
-            <div>
+            <div className="journalEntry">
                 <h3>Welcome</h3>
-                {entries.map(entry => <li key={entry.id}>  {entry.title} - {entry.body} <button onClick= { () =>  handleClick(entry)}>DELETE</button></li>)}
+                {entries.map(entry => <li key={entry.id}>  Emotion:{entry.emotion} Title:{entry.title} <br></br> Body:{entry.body} <br></br><button onClick= { () =>  handleClick(entry)}>DELETE</button></li>)}
             </div>
         )
     }

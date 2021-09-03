@@ -55,7 +55,7 @@ class EntriesForm extends Component {
             <br/>
             <input type='submit' value='Create Entry' />                     
             </form>
-            {this.state.added === true && <Redirect to={'/entries'}/>}
+            {this.state.added === true && <Redirect to={'/users/1/entries'}/>}
             </>
         );
     }
