@@ -37,7 +37,7 @@ class EntriesForm extends Component {
 
     render() {
         return (
-            <>
+            <div className="entryForm">
             <form onSubmit={this.handleSubmit}>
 
             <label>Title:</label>
@@ -56,7 +56,7 @@ class EntriesForm extends Component {
             <input type='submit' value='Create Entry' />                     
             </form>
             {this.state.added === true && <Redirect to={'/users/1/entries'}/>}
-            </>
+            </div>
         );
     }
 }

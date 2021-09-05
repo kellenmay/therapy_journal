@@ -5,10 +5,29 @@
 .journalEntry{
   margin: auto;
   width: 50%;
- 
   background-image: url("https://cdn.shopify.com/s/files/1/1413/2106/products/Vintage_Notebook_Paper_12_x_12_ST_540x.png?v=1502252221");
   max-width: 500px;
 
+}
+
+.entryForm{
+  margin: auto;
+  width: 50%;
+  align-content: center;
+  width: 500px;
+  border-radius: 5px;
+  border-style: dashed;
+  background-color: lightgrey;
+}
+
+.profile{
+  margin: auto;
+  width: 50%;
+  align-content: center;
+  width: 500px;
+  border-radius: 5px;
+  border-style: dashed;
+  background-color: lightgrey;
 }
 
 .journalEntries{
