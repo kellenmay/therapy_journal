@@ -1,5 +1,5 @@
-import { useDispatch, connect } from 'react-redux'
-import React, { useEffect } from 'react';
+import { connect } from 'react-redux'
+import React from 'react';
 import { fetchEntries } from '../actions/entriesActions'
 import EntriesForm from './entriesForm'
 
