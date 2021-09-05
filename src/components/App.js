@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchEntries } from '../actions/entriesActions';
 
+
 const App = () => {
 
   const dispatch = useDispatch()

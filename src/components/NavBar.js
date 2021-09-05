@@ -19,12 +19,12 @@ function NavBar() {
             <Link to="/entries/new">
                 <button> New Entry</button>
             </Link>
-            <Link to="/profile">
+            {/* <Link to="/profile">
                 <button id="profile">Profile</button>
             </Link>
             <Link to="/users/new">
                 <button id="profile">Create Account</button>
-            </Link>
+            </Link> */}
 
 
 
