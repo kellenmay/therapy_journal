@@ -39,7 +39,6 @@ class EntriesForm extends Component {
         return (
             <div className="entryForm">
             <form onSubmit={this.handleSubmit}>
-
             <label>Title:</label>
                 <input type='text' defaultValue={this.state.title} onChange={this.handleChange} name="title" />
                     <br />
