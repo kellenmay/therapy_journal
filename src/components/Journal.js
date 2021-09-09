@@ -27,15 +27,8 @@ const Journal = (props) => {
         )
     }
 
-const mapStateToProps = state => {
-    return { entries: state.entries }
-}
 
 
 
+export default connect(null, ({ fetchEntries, deleteEntry }))(Journal)
 
-
-export default connect(mapStateToProps, ({ fetchEntries, deleteEntry }))(Journal)
-
-
-// add a delete entry button and fetch request
