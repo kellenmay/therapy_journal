@@ -9,6 +9,7 @@ import { fetchEntries } from '../actions/entriesActions';
 const App = () => {
 
   const dispatch = useDispatch()
+  
   useEffect(() => { dispatch(fetchEntries()) })
 
   return (

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { addEntry, } from '../actions/entriesActions'
+import { addEntry } from '../actions/entriesActions'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
@@ -22,7 +22,6 @@ class EntriesForm extends Component {
         const { name, value } = e.target
         this.setState({ 
         [name]: value,
-       
         })
         
     }
