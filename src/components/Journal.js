@@ -10,7 +10,6 @@ const Journal = (props) => {
     const entries = useSelector(state => state.entries)
 
 
-
     console.log(entries)
     const handleClick = (entry) => {
         // useDispatch
@@ -28,6 +27,7 @@ const Journal = (props) => {
             return entries.sort((a,b) => a.id > b.id ? 1 : -1)
         }
     }
+        
 
     return (
             <div className="journalEntry" container>
